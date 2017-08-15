@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6 burgerHeader">
+
+        <h1><strong>EAT DA BURGERS!</strong></h1>
+
+        <img src= "./assets/img/smallburg.png" class= "imgStyle">
+        <img src= "./assets/img/smallburg.png" class= "imgStyle">
+        <img src= "./assets/img/smallburg.png" class= "imgStyle">
+        <img src= "./assets/img/smallburg.png" class= "imgStyle">
+        <img src= "./assets/img/smallburg.png" class= "imgStyle">
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+
+  <div class="container">
+    <div class="row">
+      <div class=col-lg-1></div>
+      <div class="col-lg-4 newBurger">
+        <h3>Eatten Burgers</h3>
+        {{#each burgers}}
+          {{#unless this.devoured}}
+            <div>
+              <form action="/burger/update/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devoured" value="true">
+                <button type="submit" class='btn btn-warning'> {{this.burger}}</button>
+
+              </form>
+
+<br>
+            </div>
+          {{/unless}}
+        {{/each}}
+      </div>
+
+      <div class=col-lg-2></div>
+
+      <div class="col-lg-4 newBurger">
+        <h3>Which Burger Should We Eat?</h3>
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <div>
+              <div>
+
+                  <form action="/burger/update/{{this.id}}?_method=PUT" method="POST">
+                  <input type="hidden" name="devoured" value="false">
+                  <button type="submit" class='btn btn-success btn-md'>{{this.burger}}</button>
+
+              </div>
+
+<br>
+
+            </div>
+          {{/if}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+
+<br><br>
+
+
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6 burgerOption">
+    <h2>Add Your Own Burger!</h2>
+    <form action="/burger" method="POST">
+      <input type="text" id="name" name="burger" placeholder="My Dream Burger">
+      <button type="submit" class="btn btn-warning">Add The Burger</button>
+    </form>
+  </div>
+</div>

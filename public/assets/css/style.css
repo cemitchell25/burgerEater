@@ -1,0 +1,49 @@
+body {
+
+font-family: 'Oxygen', sans-serif;
+background-image: url("../img/burger.png");
+background-size: 100%;
+
+}
+
+.imgStyle {
+
+  height: 100px;
+  width: 75px;
+
+}
+
+h1 {
+
+  color: green;
+  font-weight: 1000;
+
+}
+
+.burgerHeader {
+
+  background-color: white;
+  text-align: center;
+  padding:0 0 15px 0;
+  margin-top: 15px;
+  border-radius: 15px
+}
+
+.burgerOption {
+
+  background-color: white;
+  text-align: center;
+  padding:0 0 15px 0;
+  border-radius: 15px
+
+}
+
+.newBurger {
+
+  background-color: white;
+  text-align: center;
+  /*padding:0 0 15px 0;*/
+  border-radius: 15px;
+
+
+}
