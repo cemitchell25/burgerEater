@@ -22,7 +22,7 @@
     <div class="row">
       <div class=col-lg-1></div>
       <div class="col-lg-4 newBurger">
-        <h3>Eatten Burgers</h3>
+        <h3>Eaten Burgers</h3>
         {{#each burgers}}
           {{#unless this.devoured}}
             <div>
@@ -74,7 +74,7 @@
     <h2>Add Your Own Burger!</h2>
     <form class="create-update-form" action="/" method="POST">
       <div class= "form-group">
-      <input type="text" name="burger" placeholder="My Dream Burger">
+      <input type="text" name="devoured" placeholder="My Dream Burger">
       <button type="submit" class="btn btn-warning">Add The Burger</button>
     </form>
   </div>
