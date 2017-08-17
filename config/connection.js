@@ -1,4 +1,7 @@
 var mysql = require("mysql");
+var port = process.env.PORT || 8000;
+var express = require('express');
+var server = express();
 var connection;
 
 // = mysql.createConnection({
@@ -27,7 +30,6 @@ else {
 
   connection= mysql.createConnection({
 
-    port: process.env.PORT || 3000,
     host: "localhost",
     user: "root",
     password: "",
@@ -38,3 +40,7 @@ else {
 
 connection.connect();
 module.exports = connection;
+
+server.listen(port, function() {
+    console.log("App is running on port " + port);
+});
