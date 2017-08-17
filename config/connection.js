@@ -27,6 +27,7 @@ else {
 
   connection= mysql.createConnection({
 
+    port: process.env.PORT || 3000,
     host: "localhost",
     user: "root",
     password: "",
