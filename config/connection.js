@@ -1,7 +1,8 @@
 var mysql = require("mysql");
 var port = process.env.PORT || 8000;
 var express = require('express');
-var server = express();
+var app = express();
+var server = require('http').Server(app)
 var connection;
 
 // = mysql.createConnection({
