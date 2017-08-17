@@ -35,5 +35,5 @@ else {
 
 }
 
-conection.connect();
+connection.connect();
 module.exports = connection;
