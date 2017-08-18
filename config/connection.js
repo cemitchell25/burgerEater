@@ -1,9 +1,10 @@
 var mysql = require("mysql");
-var port = process.env.PORT || 8000;
-var express = require('express');
-var app = express();
-var server = require('http').Server(app)
+// var port = process.env.PORT || 8000;
+// var express = require('express');
+// var app = express();
+// var server = require('http').Server(app)
 var connection;
+
 
 // = mysql.createConnection({
 //   port: 3306,
@@ -42,6 +43,6 @@ else {
 connection.connect();
 module.exports = connection;
 
-server.listen(port, function() {
-    console.log("App is running on port " + port);
-});
+// server.listen(port, function() {
+//     console.log("App is running on port " + port);
+// });

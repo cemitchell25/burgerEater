@@ -29,7 +29,7 @@ var orm = {
     });
   },
   create: function(table, cols, vals, cb) {
-    console.log("THIS IS TABLE", table);
+
     var queryString = "INSERT INTO " + table;
     queryString += " (";
     queryString += cols.toString();
@@ -37,10 +37,10 @@ var orm = {
     queryString += "VALUES (";
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
-    console.log("this is our valssss", vals);
+
     connection.query(queryString, vals, function(err, result) {
       if (err) {
-        console.log('WHAT IS OUR ERRRR', err);
+
         throw err;
       }
       cb(result);

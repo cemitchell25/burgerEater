@@ -24,17 +24,17 @@
       <div class="col-lg-4 newBurger">
         <h3>Eaten Burgers</h3>
         {{#each burgers}}
-          {{#unless this.devoured}}
+          {{#if this.devoured}}
             <div>
               <form action="/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="devoured" value="true">
+                <input type="hidden" name="devoured" value="false">
                 <button type="submit" class='btn btn-warning'> {{this.burger}}</button>
 
               </form>
 
 <br>
             </div>
-          {{/unless}}
+          {{/if}}
         {{/each}}
       </div>
 
@@ -43,12 +43,12 @@
       <div class="col-lg-4 newBurger">
         <h3>Which Burger Should We Eat?</h3>
         {{#each burgers}}
-          {{#if this.devoured}}
+          {{#unless this.devoured}}
             <div>
               <div>
 
                   <form action="/{{this.id}}?_method=PUT" method="POST">
-                  <input type="hidden" name="devoured" value="false">
+                  <input type="hidden" name="devoured" value="true">
                   <button type="submit" class='btn btn-success btn-md'>{{this.burger}}</button>
 
               </form>
@@ -58,7 +58,7 @@
 <br>
 
             </div>
-          {{/if}}
+          {{/unless}}
         {{/each}}
       </div>
     </div>

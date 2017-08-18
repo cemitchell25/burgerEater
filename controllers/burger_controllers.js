@@ -14,11 +14,12 @@ router.get("/", function(req, res) {
   });
 });
 router.post("/", function(req, res) {
-  console.log(' WHAT IS OUR REQ BODY???', req.body);
+
+
   burger.create([
-    "burger", "devoured"
+    "burger"
   ], [
-    req.body.devoured, req.body
+    req.body.devoured
   ], function() {
     res.redirect("/");
   });
